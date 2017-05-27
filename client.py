@@ -4,7 +4,9 @@ import numpy as np
 
 # reenable after authenication is in place
 # r = requests.get('http://192.168.1.xx/mjpeg.cgi', auth=('user', 'password'), stream=True)
-r = requests.get('http://192.168.1.xx/mjpeg.cgi', stream=True)
+print('getting ready...')
+r = requests.get('http://192.168.0.11:8081/mjpeg.cgi', stream=True)
+print('sent request')
 if(r.status_code == 200):
     bytes = bytes()
     for chunk in r.iter_content(chunk_size=1024):
