@@ -1,5 +1,4 @@
 FROM brandonsoto/opencv-python
-
 MAINTAINER Brandon Soto <brandon.soto09@gmail.com> 
 
 ADD . /videostream
