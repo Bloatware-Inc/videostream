@@ -1,10 +1,8 @@
 FROM brandonsoto/opencv-python
 
-WORKDIR /usr/src/app
-COPY requirements.txt ./
+MAINTAINER Brandon Soto <brandon.soto09@gmail.com> 
 
-RUN pip install --no-cache-dir -r requirements.txt
-
-COPY . .
-
-CMD ["python", "./server.py" ]
+ADD . /videostream
+EXPOSE 8081
+ENV DISPLAY :0
+CMD ["python3", "/videostream/server.py"]
