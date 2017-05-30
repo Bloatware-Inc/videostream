@@ -1,4 +1,5 @@
 import cv2
+import sys
 import requests
 import numpy as np
 
@@ -27,8 +28,7 @@ def stream_video():
         else:
             print("Received unexpected status code {}".format(response.status_code))
     except OSError as error:
-        print('An OS error has occurred!')
-        print(error)
+        print(error, file=sys.stderr)
 
 
 if __name__ == '__main__':
